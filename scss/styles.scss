@@ -350,6 +350,10 @@ a {
   padding: $space-6xl 0 $space-5xl;  // Increased for more breathing room
   overflow: hidden;
   
+  @include tablet {
+    padding: $space-5xl 0 $space-4xl;
+  }
+  
   @include mobile {
     padding: $space-4xl 0;
   }
@@ -695,6 +699,10 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   
+  @include tablet {
+    gap: 2rem;
+  }
+  
   @include mobile {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1024,6 +1032,10 @@ a {
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
   
+  @include tablet {
+    font-size: 2.25rem;
+  }
+  
   @include mobile {
     font-size: 2rem;
   }
@@ -1101,6 +1113,10 @@ a {
     font-weight: $font-weight-bold;
     color: $color-primary;
     margin-bottom: 0.5rem;
+    
+    @include tablet {
+      font-size: 2.75rem;
+    }
     
     @include mobile {
       font-size: 2.5rem;
@@ -1275,6 +1291,10 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  
+  @include tablet {
+    gap: 1.75rem;
+  }
   
   @include mobile {
     grid-template-columns: 1fr;
