@@ -511,7 +511,7 @@ function initializeScrollAnimations() {
 
   // Observe cards and elements with staggered animation
   const animatedElements = document.querySelectorAll(
-    ".benefit-card, .impact-point, .stat-card, .faq-item, .cafe-card, .feature-card, .step-card, .roadmap-card"
+    ".benefit-card, .impact-point, .stat-card, .cafe-card, .feature-card, .step-card"
   );
 
   animatedElements.forEach((el, index) => {
@@ -519,59 +519,11 @@ function initializeScrollAnimations() {
     el.style.setProperty("--animation-order", index % 3);
     observer.observe(el);
   });
-
-  // Parallax effect for hero and sections
-  let ticking = false;
-
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        parallaxScroll();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
 }
 
 function parallaxScroll() {
-  const scrolled = window.pageYOffset;
-
-  // Hero parallax
-  const hero = document.querySelector(".hero");
-  if (hero) {
-    const heroContent = hero.querySelector(".hero__content");
-    const heroMockup = hero.querySelector(".hero__mockup");
-
-    if (heroContent) {
-      heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-      heroContent.style.opacity = 1 - scrolled / 600;
-    }
-
-    if (heroMockup) {
-      heroMockup.style.transform = `translateY(${scrolled * 0.15}px)`;
-    }
-  }
-
-  // Section backgrounds parallax
-  const sections = document.querySelectorAll(".section");
-  sections.forEach((section) => {
-    const rect = section.getBoundingClientRect();
-    const offsetTop = rect.top + window.pageYOffset;
-    const offsetHeight = section.offsetHeight;
-
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      const parallax = (scrolled - offsetTop) * 0.1;
-      const sectionBg = section.querySelector(".section-header");
-
-      if (sectionBg) {
-        sectionBg.style.transform = `translateY(${parallax}px)`;
-      }
-    }
-  });
-}
-
-// ============================================
+  // Parallax removed
+} // ============================================
 // QR CODE INITIALIZATION
 // ============================================
 
