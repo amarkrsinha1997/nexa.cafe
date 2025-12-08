@@ -736,13 +736,6 @@ a {
       opacity: 1;
     }
     
-    .roadmap-card__icon {
-      transform: scale(1.1) rotate(5deg);
-      box-shadow: 
-        0 12px 40px rgba($color-primary, 0.4),
-        0 4px 16px rgba(#000, 0.12);
-    }
-    
     .roadmap-card__number {
       opacity: 1;
     }
@@ -771,14 +764,14 @@ a {
     width: 80px;
     height: 80px;
     background: linear-gradient(135deg, #FF8A3D 0%, $color-primary 100%);
-    border-radius: 20px;
+    border-radius: 50%;
     font-size: 2rem;
     color: #ffffff;
+    border: 2px solid rgba($color-primary, 0.2);
     box-shadow: 
-      0 8px 32px rgba($color-primary, 0.3),
-      0 2px 8px rgba(#000, 0.08),
-      inset 0 2px 0 rgba(#fff, 0.4);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      0 8px 32px rgba($color-primary, 0.25),
+      0 2px 8px rgba(#000, 0.08);
+    // transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 2;
     
