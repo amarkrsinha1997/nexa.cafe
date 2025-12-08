@@ -221,7 +221,7 @@ a {
   align-items: center;
   gap: $space-xl;
   
-  @include mobile {
+  @media (max-width: 920px) {
     display: none;
     
     &.is-open {
@@ -251,7 +251,7 @@ a {
     gap: $space-lg;
     list-style: none;
     
-    @include mobile {
+    @media (max-width: 920px) {
       flex-direction: column;
       width: 100%;
     }
@@ -336,7 +336,7 @@ a {
   cursor: pointer;
   padding: $space-xs;
   
-  @include mobile {
+  @media (max-width: 920px) {
     display: block;
   }
 }
