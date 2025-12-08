@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Primary Meta Tags -->
+  <title data-i18n="meta.title">nexa.cafe - Pay with Nexa at your favorite cafes</title>
+  <meta name="title" content="nexa.cafe - Pay with Nexa at your favorite cafes">
+  <meta name="description" data-i18n="meta.description" content="Discover restaurants and coffee shops that accept Nexa for fast, energy-backed cryptocurrency payments. The future of payments meets cozy cafe culture.">
+  <meta name="keywords" content="nexa, cafe, cryptocurrency, payments, web3, bitcoin, restaurant, coffee, blockchain">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nexa.cafe/">
+  <meta property="og:title" content="nexa.cafe - Pay with Nexa at your favorite cafes">
+  <meta property="og:description" content="Discover restaurants and coffee shops that accept Nexa for fast, energy-backed cryptocurrency payments.">
+  <meta property="og:image" content="https://nexa.cafe/assets/images/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://nexa.cafe/">
+  <meta property="twitter:title" content="nexa.cafe - Pay with Nexa at your favorite cafes">
+  <meta property="twitter:description" content="Discover restaurants and coffee shops that accept Nexa for fast, energy-backed cryptocurrency payments.">
+  <meta property="twitter:image" content="https://nexa.cafe/assets/images/og-image.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css">
+  
+  <!-- Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#FFE144">
+</head>
+<body>
+  
+  <!-- HEADER / NAVIGATION -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">
+        <span class="logo__text">nexa.cafe</span>
+      </a>
+      
+      <nav class="nav" id="mainNav">
+        <ul class="nav__list">
+          <li><a href="#explore" class="nav__link" data-i18n="nav.explore">Explore Cafes</a></li>
+          <li><a href="#how-it-works" class="nav__link" data-i18n="nav.how_it_works">How it works</a></li>
+          <li><a href="#nexa-benefits" class="nav__link">Benefits</a></li>
+          <li><a href="#roadmap" class="nav__link" data-i18n="nav.roadmap">Roadmap</a></li>
+          <li><a href="#faq" class="nav__link">FAQ</a></li>
+          <li><a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        
+        <div class="lang-switcher" id="langSwitcher">
+          <i class="fas fa-globe lang-switcher__icon" aria-hidden="true"></i>
+          <label class="sr-only" for="langSelect">Language</label>
+          <select id="langSelect" class="lang-switcher__select" aria-label="Select language">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी</option>
+          </select>
+        </div>
+      </nav>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+    </div>
+  </header>
+  
+  <!-- MAIN CONTENT -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__text">
+            <h1 class="hero__title" data-i18n="hero.title">
+              Pay with Nexa at your favorite cafes
+            </h1>
+            <p class="hero__subtitle" data-i18n="hero.subtitle">
+              Discover restaurants and coffee shops that accept Nexa for fast, energy-backed payments. The future of payments meets cozy cafe culture.
+            </p>
+            <div class="hero__actions">
+              <a href="#explore" class="btn btn--primary" data-i18n="hero.primary_cta">
+                Explore Cafes
+              </a>
+              <a href="#how-it-works" class="btn btn--secondary" data-i18n="hero.secondary_cta">
+                How Nexa payments work
+              </a>
+            </div>
+          </div>
+          
+          <div class="hero__visual">
+            <div class="hero__mockup">
+              <div class="mockup__content">
+                <div class="mockup__icon">
+                  <i class="fas fa-mug-hot"></i>
+                </div>
+                <h3 class="mockup__title" data-i18n="hero.mockup_title">Cafe Bill</h3>
+                <div class="mockup__amount">$12.50</div>
+                <div id="qrcode" class="mockup__qr">
+                  <!-- QR code will be generated here -->
+                </div>
+                <div class="badge badge--nexa badge--success">
+                  <i class="fas fa-circle-check"></i>
+                  <span data-i18n="hero.paid_with_nexa">Paid with Nexa</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- HOW IT WORKS SECTION -->
+    <section class="section how-it-works" id="how-it-works">
+      <div class="container">
+        <h2 class="h2 text-center" data-i18n="how_it_works.title">
+          How Nexa Payments Work
+        </h2>
+        <p class="text-center text-muted" data-i18n="how_it_works.subtitle">
+          Three simple steps to pay with Nexa at participating cafes
+        </p>
+        
+        <div class="how-it-works__steps">
+          <div class="step-card">
+            <div class="step-card__icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <h3 class="step-card__title" data-i18n="how_it_works.step1.title">
+                Find a Nexa Cafe
+              </h3>
+              <p class="step-card__description" data-i18n="how_it_works.step1.description">
+                Browse our directory of cafes and restaurants that accept Nexa cryptocurrency.
+              </p>
+            </div>
+          </div>
+          
+          <div class="step-card">
+            <div class="step-card__icon"><i class="fas fa-mobile-screen-button"></i></div>
+            <div>
+              <h3 class="step-card__title" data-i18n="how_it_works.step2.title">
+                Scan the Nexa QR
+              </h3>
+              <p class="step-card__description" data-i18n="how_it_works.step2.description">
+                Use your Nexa wallet to scan the QR code at checkout for instant payment.
+              </p>
+            </div>
+          </div>
+          
+          <div class="step-card">
+            <div class="step-card__icon"><i class="fas fa-bolt"></i></div>
+            <div>
+              <h3 class="step-card__title" data-i18n="how_it_works.step3.title">
+                Enjoy Instant Payment
+              </h3>
+              <p class="step-card__description" data-i18n="how_it_works.step3.description">
+                Lightning-fast transactions with minimal fees. Enjoy your coffee while we handle the rest.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- WHY NEXA SECTION -->
+    <section class="section why-nexa">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="why_nexa.badge">Innovation</span>
+          <h2 class="section-title" data-i18n="why_nexa.title">
+            Why Nexa is Perfect for Cafes
+          </h2>
+          <p class="section-subtitle" data-i18n="why_nexa.subtitle">
+            Experience the fastest cryptocurrency payments in the world
+          </p>
+        </div>
+        
+        <div class="why-nexa__features">
+          <div class="feature-card">
+            <div class="feature-card__icon"><i class="fas fa-bolt"></i></div>
+            <div>
+              <h3 class="feature-card__title" data-i18n="why_nexa.speed.title">
+                Instant Confirmations
+              </h3>
+              <p class="feature-card__description" data-i18n="why_nexa.speed.description">
+                Nexa transactions confirm in under 2 seconds - faster than swiping a credit card. No more waiting at checkout.
+              </p>
+            </div>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-card__icon"><i class="fas fa-coins"></i></div>
+            <div>
+              <h3 class="feature-card__title" data-i18n="why_nexa.fees.title">
+                Minimal Fees
+              </h3>
+              <p class="feature-card__description" data-i18n="why_nexa.fees.description">
+                Pay fractions of a cent per transaction. Keep more money for coffee instead of paying processing fees.
+              </p>
+            </div>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-card__icon"><i class="fas fa-shield-halved"></i></div>
+            <div>
+              <h3 class="feature-card__title" data-i18n="why_nexa.security.title">
+                Proof-of-Work Security
+              </h3>
+              <p class="feature-card__description" data-i18n="why_nexa.security.description">
+                Energy-backed blockchain ensures your payments are secure and irreversible. No chargebacks, no fraud.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CAFE LISTING SECTION -->
+    <section class="section cafe-list" id="explore">
+      <div class="container">
+        <h2 class="h2 text-center" data-i18n="cafes.title">
+          Featured Nexa Cafes
+        </h2>
+        <p class="text-center text-muted" data-i18n="cafes.subtitle">
+          Discover amazing places where you can pay with Nexa
+        </p>
+        
+        <div class="cafe-list__grid" id="cafeListGrid">
+          <!-- Cafe cards will be dynamically inserted here by JavaScript -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- ROADMAP SECTION -->
+    <section class="section roadmap-section" id="roadmap">
+      <div class="container">
+        <div class="roadmap-header">
+          <span class="roadmap-badge">Coming Soon</span>
+          <h2 class="roadmap-title" data-i18n="roadmap.title">
+            What's Coming to nexa.cafe
+          </h2>
+          <p class="roadmap-subtitle" data-i18n="roadmap.subtitle">
+            Our vision for the future of crypto cafe payments
+          </p>
+        </div>
+        
+        <div class="roadmap-grid">
+          <div class="roadmap-card" data-index="1">
+            <div class="roadmap-card__number">01</div>
+            <div class="roadmap-card__icon-wrapper">
+              <div class="roadmap-card__icon">
+                <i class="fas fa-mobile-screen-button"></i>
+              </div>
+            </div>
+            <div class="roadmap-card__content">
+              <h3 class="roadmap-card__title" data-i18n="roadmap.item1.title">
+                Mobile App Launch
+              </h3>
+              <p class="roadmap-card__description" data-i18n="roadmap.item1.description">
+                Native iOS and Android apps for finding nearby Nexa-friendly cafes with integrated wallet support.
+              </p>
+            </div>
+            <div class="roadmap-card__glow"></div>
+          </div>
+          
+          <div class="roadmap-card" data-index="2">
+            <div class="roadmap-card__number">02</div>
+            <div class="roadmap-card__icon-wrapper">
+              <div class="roadmap-card__icon">
+                <i class="fas fa-gift"></i>
+              </div>
+            </div>
+            <div class="roadmap-card__content">
+              <h3 class="roadmap-card__title" data-i18n="roadmap.item2.title">
+                Loyalty Points in Nexa
+              </h3>
+              <p class="roadmap-card__description" data-i18n="roadmap.item2.description">
+                Earn rewards in Nexa for every purchase. Build your coffee fund with energy-backed cryptocurrency.
+              </p>
+            </div>
+            <div class="roadmap-card__glow"></div>
+          </div>
+          
+          <div class="roadmap-card" data-index="3">
+            <div class="roadmap-card__number">03</div>
+            <div class="roadmap-card__icon-wrapper">
+              <div class="roadmap-card__icon">
+                <i class="fas fa-earth-americas"></i>
+              </div>
+            </div>
+            <div class="roadmap-card__content">
+              <h3 class="roadmap-card__title" data-i18n="roadmap.item3.title">
+                Global Chain Partners
+              </h3>
+              <p class="roadmap-card__description" data-i18n="roadmap.item3.description">
+                Partnerships with major cafe franchises worldwide to accept Nexa payments at scale.
+              </p>
+            </div>
+            <div class="roadmap-card__glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- NEXA BLOCKCHAIN BENEFITS SECTION -->
+    <section class="section nexa-benefits" id="nexa-benefits">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="benefits.badge">Blockchain Power</span>
+          <h2 class="section-title" data-i18n="benefits.title">Why Nexa Powers the Future of Payments</h2>
+          <p class="section-subtitle" data-i18n="benefits.subtitle">
+            Built on cutting-edge blockchain technology delivering unmatched performance and reliability
+          </p>
+        </div>
+        
+        <div class="benefits-grid">
+          <!-- Performance Card -->
+          <div class="benefit-card benefit-card--highlight">
+            <div class="benefit-card__icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div class="benefit-card__stat" data-i18n="benefits.performance.stat">100,000 TPS</div>
+            <h3 class="benefit-card__title" data-i18n="benefits.performance.title">Lightning Fast Transactions</h3>
+            <p class="benefit-card__description" data-i18n="benefits.performance.description">
+              Nexa handles 100,000 transactions per second—outperforming SWIFT, Mastercard, and Visa combined. Process over 10 billion+ transactions daily with instant confirmations.
+            </p>
+            <ul class="benefit-card__list">
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="benefits.performance.point1">Instant payment confirmation</span></li>
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="benefits.performance.point2">Zero transaction delays</span></li>
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="benefits.performance.point3">Real-time settlement</span></li>
+            </ul>
+          </div>
+          
+          <!-- Cost Efficiency -->
+          <div class="benefit-card">
+            <div class="benefit-card__icon">
+              <i class="fas fa-coins"></i>
+            </div>
+            <h3 class="benefit-card__title" data-i18n="benefits.low_fees.title">Ultra-Low Fees</h3>
+            <p class="benefit-card__description" data-i18n="benefits.low_fees.description">
+              Near-zero transaction costs mean more profit for merchants and better value for customers. No hidden fees or intermediary charges.
+            </p>
+          </div>
+          
+          <!-- Security -->
+          <div class="benefit-card">
+            <div class="benefit-card__icon">
+              <i class="fas fa-shield-halved"></i>
+            </div>
+            <h3 class="benefit-card__title" data-i18n="benefits.security.title">Bank-Grade Security</h3>
+            <p class="benefit-card__description" data-i18n="benefits.security.description">
+              Proof-of-work blockchain ensures every transaction is cryptographically secured and immutable. Your payments are protected by the most secure technology available.
+            </p>
+          </div>
+          
+          <!-- Scalability -->
+          <div class="benefit-card">
+            <div class="benefit-card__icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="benefit-card__title" data-i18n="benefits.scalability.title">Infinite Scalability</h3>
+            <p class="benefit-card__description" data-i18n="benefits.scalability.description">
+              Native token technology allows unlimited growth without network congestion. Perfect for global cafe chains and small independent shops alike.
+            </p>
+          </div>
+          
+          <!-- Decentralization -->
+          <div class="benefit-card">
+            <div class="benefit-card__icon">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3 class="benefit-card__title" data-i18n="benefits.decentralized.title">Truly Decentralized</h3>
+            <p class="benefit-card__description" data-i18n="benefits.decentralized.description">
+              No central authority controls your money. Permissionless, censorship-resistant payments that work anywhere, anytime.
+            </p>
+          </div>
+          
+          <!-- Energy Backed -->
+          <div class="benefit-card">
+            <div class="benefit-card__icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="benefit-card__title" data-i18n="benefits.energy_backed.title">Energy-Backed Value</h3>
+            <p class="benefit-card__description" data-i18n="benefits.energy_backed.description">
+              Proof-of-work mining creates real, tangible value backed by computational energy. A currency with intrinsic worth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ECONOMIC IMPACT SECTION -->
+    <section class="section economic-impact">
+      <div class="container">
+        <div class="impact-wrapper">
+          <div class="impact-content">
+            <span class="section-badge" data-i18n="economic.badge">Economic Growth</span>
+            <h2 class="section-title" data-i18n="economic.title">Driving Sales & Boosting Local Economies</h2>
+            
+            <div class="impact-points">
+              <div class="impact-point">
+                <div class="impact-point__icon">
+                  <i class="fas fa-arrow-trend-up"></i>
+                </div>
+                <div class="impact-point__content">
+                  <h3 data-i18n="economic.customer_base.title">Increased Customer Base</h3>
+                  <p data-i18n="economic.customer_base.description">Attract crypto-savvy customers who actively seek Nexa-accepting businesses. Tap into a growing market of digital currency users with high spending power.</p>
+                </div>
+              </div>
+              
+              <div class="impact-point">
+                <div class="impact-point__icon">
+                  <i class="fas fa-piggy-bank"></i>
+                </div>
+                <div class="impact-point__content">
+                  <h3 data-i18n="economic.lower_costs.title">Lower Transaction Costs</h3>
+                  <p data-i18n="economic.lower_costs.description">Save 2-3% on credit card processing fees. Those savings go directly to your bottom line or can be passed to customers through better pricing.</p>
+                </div>
+              </div>
+              
+              <div class="impact-point">
+                <div class="impact-point__icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="impact-point__content">
+                  <h3 data-i18n="economic.instant_cash.title">Instant Cash Flow</h3>
+                  <p data-i18n="economic.instant_cash.description">Receive payments instantly with no settlement delays. Better cash flow means more capital for inventory, staff, and growth opportunities.</p>
+                </div>
+              </div>
+              
+              <div class="impact-point">
+                <div class="impact-point__icon">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <div class="impact-point__content">
+                  <h3 data-i18n="economic.global_reach.title">Global Customer Reach</h3>
+                  <p data-i18n="economic.global_reach.description">Accept payments from tourists and international customers without currency conversion hassles or foreign transaction fees.</p>
+                </div>
+              </div>
+              
+              <div class="impact-point">
+                <div class="impact-point__icon">
+                  <i class="fas fa-building"></i>
+                </div>
+                <div class="impact-point__content">
+                  <h3 data-i18n="economic.community.title">Community Economic Boost</h3>
+                  <p data-i18n="economic.community.description">Faster money circulation stimulates local economies. When businesses thrive, they hire more staff, buy more local supplies, and reinvest in the community.</p>
+                </div>
+              </div>
+              
+              <div class="impact-point">
+                <div class="impact-point__icon">
+                  <i class="fas fa-medal"></i>
+                </div>
+                <div class="impact-point__content">
+                  <h3 data-i18n="economic.early_adopter.title">Early Adopter Advantage</h3>
+                  <p data-i18n="economic.early_adopter.description">Position your cafe as innovative and tech-forward. Early adoption creates brand differentiation and media attention.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="impact-stats">
+            <div class="stat-card">
+              <div class="stat-card__value">2.5x</div>
+              <div class="stat-card__label" data-i18n="economic.stats.transaction_value">Average Transaction Value</div>
+              <p data-i18n="economic.stats.transaction_desc">Crypto users spend more per visit</p>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-card__value">15%</div>
+              <div class="stat-card__label" data-i18n="economic.stats.revenue">Revenue Increase</div>
+              <p data-i18n="economic.stats.revenue_desc">Average boost for Nexa-accepting cafes</p>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-card__value">$0.001</div>
+              <div class="stat-card__label" data-i18n="economic.stats.fee">Transaction Fee</div>
+              <p data-i18n="economic.stats.fee_desc">Fraction of traditional payment costs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ SECTION -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="faq.badge">FAQ</span>
+          <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+          <p class="section-subtitle" data-i18n="faq.subtitle">
+            Everything you need to know about using Nexa at cafes
+          </p>
+        </div>
+        
+        <div class="faq-grid">
+          <div class="faq-column">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q1">What is Nexa?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a1">Nexa is a cutting-edge cryptocurrency built on proof-of-work blockchain technology. It's designed for instant, low-cost transactions with the ability to handle 100,000 transactions per second—making it perfect for everyday purchases like coffee.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q2">How do I pay with Nexa at a cafe?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a2">It's simple! Just scan the cafe's QR code with your Nexa wallet app, enter the amount, and confirm. Payment is instant—faster than waiting for a credit card authorization.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q3">Do I need a special wallet?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a3">You'll need a Nexa-compatible wallet. We recommend official wallets available for iOS and Android. They're free, secure, and easy to set up in minutes.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q4">Are there any fees when I pay?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a4">Nexa transactions have near-zero fees—typically less than a fraction of a cent. You'll never pay the 2-3% that credit cards charge merchants.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q5">Is Nexa safe and secure?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a5">Absolutely. Nexa uses proof-of-work blockchain security—the same proven technology as Bitcoin. Every transaction is cryptographically secured and recorded on an immutable ledger.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q6">Can I get refunds?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a6">Yes. While blockchain transactions are irreversible, cafes can issue refunds by sending Nexa back to your wallet address. This is typically faster than traditional refund processing.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-column">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q7">How fast are Nexa transactions?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a7">Instant! Nexa processes 100,000 transactions per second with immediate confirmation. You'll see your payment confirmed before you finish saying "thank you."</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q8">What if the cafe doesn't accept Nexa yet?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a8">Tell them about nexa.cafe! We help cafes integrate Nexa payments easily. Merchants can sign up and start accepting Nexa in under 10 minutes.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q9">How do I get Nexa cryptocurrency?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a9">You can buy Nexa on supported cryptocurrency exchanges, receive it from friends, or earn it through various methods. Check the official Nexa website for current exchange listings.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q10">I'm a cafe owner. How do I start accepting Nexa?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a10">Contact us through the form below! We'll help you set up a Nexa wallet, create your payment QR code, and get listed on our cafe directory—all for free.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q11">Will Nexa's value fluctuate?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a11">Like all cryptocurrencies, Nexa's price can fluctuate. However, with instant settlements, merchants can immediately convert to their local currency if they prefer stable value.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq.q12">Is Nexa better than other cryptocurrencies?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq.a12">Nexa offers unique advantages: 100,000 TPS capacity, native token support, ultra-low fees, and instant confirmations. It's specifically designed for high-volume, everyday transactions like cafe purchases.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- POWERED BY SECTION -->
+    <section class="section section--powered">
+      <div class="container">
+        <div class="powered-card">
+          <h3 class="h3" data-i18n="powered.title">Powered by Nexa</h3>
+          <p class="powered-card__description" data-i18n="powered.description">
+            Nexa provides instant, low-fee transactions backed by proof-of-work energy. Learn more about the cryptocurrency powering the future of cafe payments.
+          </p>
+          <a href="https://nexa.org" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" data-i18n="powered.cta">
+            Learn about Nexa
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Get in Touch</span>
+          <h2 class="section-title" data-i18n="contact.title">Contact Us</h2>
+          <p class="section-subtitle" data-i18n="contact.subtitle">
+            Ready to accept Nexa at your cafe? Have questions? We're here to help.
+          </p>
+        </div>
+        
+        <div class="contact-wrapper">
+          <div class="contact-content">
+            <div class="contact-email-card">
+              <div class="contact-email-card__icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-email-card__content">
+                <h3>Email Us</h3>
+                <a href="mailto:connect@nexa.cafe" class="email-link">connect@nexa.cafe</a>
+                <div class="response-time">
+                  <i class="fas fa-clock"></i>
+                  <span data-i18n="contact.response_desc">We'll respond within 24 hours on business days</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="contact-divider">
+              <span data-i18n="contact.or">OR</span>
+            </div>
+            
+            <div class="contact-form-link">
+              <div class="form-link-card">
+                <div class="form-link-card__icon">
+                  <i class="fab fa-google"></i>
+                </div>
+                <div class="form-link-card__content">
+                  <h3 data-i18n="contact.form_title">Fill Google Form</h3>
+                  <p data-i18n="contact.form_desc">Share your details and we'll contact you back with all the information you need</p>
+                  <a 
+                    href="https://forms.google.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="btn btn--primary"
+                    data-i18n="contact.form_button"
+                  >
+                    Open Contact Form
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand Column -->
+        <div class="footer-column">
+          <div class="footer-logo">
+            <span class="logo-text">nexa.cafe</span>
+          </div>
+          <p class="footer-description" data-i18n="footer.tagline">
+            Bringing cryptocurrency payments to your favorite local cafes. One coffee at a time.
+          </p>
+        </div>
+        
+        <!-- Explore Column -->
+        <div class="footer-column">
+          <h4 data-i18n="footer.explore.title">Explore</h4>
+          <ul>
+            <li><a href="#explore" data-i18n="footer.explore.cafes">Find Cafes</a></li>
+            <li><a href="#how-it-works" data-i18n="footer.explore.how">How it Works</a></li>
+            <li><a href="#why-nexa" data-i18n="footer.explore.why">Why Nexa</a></li>
+            <li><a href="#roadmap" data-i18n="footer.explore.roadmap">Roadmap</a></li>
+          </ul>
+        </div>
+        
+        <!-- Resources Column -->
+        <div class="footer-column">
+          <h4 data-i18n="footer.resources.title">Resources</h4>
+          <ul>
+            <li><a href="https://nexa.org" target="_blank" rel="noopener noreferrer" data-i18n="footer.resources.nexa">About Nexa</a></li>
+            <li><a href="/wallet-guide" data-i18n="footer.resources.wallet">Wallet Guide</a></li>
+            <li><a href="/merchant-guide" data-i18n="footer.resources.merchant">Merchant Guide</a></li>
+          </ul>
+        </div>
+        
+        <!-- Ecosystem Column -->
+        <div class="footer-column">
+          <h4 data-i18n="footer.ecosystem.title">Nexa Ecosystem</h4>
+          <ul>
+            <li><a href="https://nekkha.com" target="_blank" rel="noopener noreferrer">Nekkha</a></li>
+            <li><a href="https://nexa.land" target="_blank" rel="noopener noreferrer">Nexa Land</a></li>
+            <li><a href="https://nexahouse.com" target="_blank" rel="noopener noreferrer">Nexa House</a></li>
+            <li><a href="https://nexatraining.com" target="_blank" rel="noopener noreferrer">Nexa Training</a></li>
+            <li><a href="https://nexainstitute.com" target="_blank" rel="noopener noreferrer">Nexa Institute</a></li>
+          </ul>
+        </div>
+        
+        <!-- Newsletter Column -->
+        <div class="footer-column">
+          <h4 data-i18n="footer.newsletter.title">Stay Updated</h4>
+          <p data-i18n="footer.newsletter.description">Get notified when new cafes join the network</p>
+          <form class="newsletter-form">
+            <input 
+              type="email" 
+              placeholder="Your email" 
+              data-i18n-placeholder="footer.newsletter.placeholder"
+              aria-label="Email address"
+            />
+            <button type="submit" class="btn btn--primary btn--small" data-i18n="footer.newsletter.button">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 nexa.cafe. <span data-i18n="footer.rights">All rights reserved.</span></p>
+        <div class="footer-social">
+          <a href="https://twitter.com/nexacafe" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://t.me/nexacafe" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+          </a>
+          <a href="https://discord.gg/nexacafe" aria-label="Discord" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8CdnJNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/content.config.js"></script>
+  <script src="/js/content.hi.js"></script>
+  <script src="/js/main.js"></script>
+  
+</body>
+</html>
+</html>

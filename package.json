@@ -1,0 +1,46 @@
+{
+  "name": "nexa-cafe",
+  "version": "1.0.0",
+  "description": "Modern landing page for nexa.cafe - Discover cafes and restaurants that accept Nexa cryptocurrency",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass scss/styles.scss css/styles.css --watch",
+    "sass:build": "sass scss/styles.scss css/styles.css --style=compressed --no-source-map",
+    "serve": "npx serve . -l 3001",
+    "dev": "npm-run-all --parallel sass serve",
+    "build": "npm run sass:build",
+    "lint:css": "stylelint 'scss/**/*.scss'",
+    "sitemap": "./scripts/generate-sitemap.sh",
+    "robots": "./scripts/generate-robots.sh",
+    "seo": "npm run sitemap && npm run robots",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "nexa",
+    "cafe",
+    "cryptocurrency",
+    "payments",
+    "web3",
+    "nexa-payments",
+    "restaurants",
+    "coffee-shops"
+  ],
+  "author": "nexa.cafe",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "serve": "^14.2.1",
+    "npm-run-all": "^4.1.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nexacafe/nexa.cafe"
+  }
+}
