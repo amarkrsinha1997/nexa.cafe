@@ -299,23 +299,46 @@ class MobileMenu {
     if (!this.toggle || !this.nav) return;
 
     this.toggle.addEventListener("click", () => {
-      this.nav.classList.toggle("is-open");
+      const isOpen = this.nav.classList.contains("is-open");
 
-      // Update aria-expanded
-      const isExpanded = this.nav.classList.contains("is-open");
-      this.toggle.setAttribute("aria-expanded", isExpanded);
-
-      // Update toggle icon
-      this.toggle.textContent = isExpanded ? "✕" : "☰";
+      if (isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
     });
 
     // Close menu on outside click
     document.addEventListener("click", (e) => {
       if (!this.nav.contains(e.target) && !this.toggle.contains(e.target)) {
-        this.nav.classList.remove("is-open");
-        this.toggle.setAttribute("aria-expanded", "false");
-        this.toggle.textContent = "☰";
+        this.close();
       }
+    });
+  }
+
+  open() {
+    this.nav.classList.add("is-open");
+    this.toggle.setAttribute("aria-expanded", "true");
+    this.toggle.textContent = "✕";
+
+    // Animate menu items
+    const menuItems = this.nav.querySelectorAll(".nav__item");
+    menuItems.forEach((item, index) => {
+      item.style.animation = `slideInRight 0.3s ease-out ${
+        index * 0.05
+      }s forwards`;
+    });
+  }
+
+  close() {
+    this.nav.classList.remove("is-open");
+    this.toggle.setAttribute("aria-expanded", "false");
+    this.toggle.textContent = "☰";
+
+    // Reset animations
+    const menuItems = this.nav.querySelectorAll(".nav__item");
+    menuItems.forEach((item) => {
+      item.style.animation = "";
     });
   }
 }
@@ -408,28 +431,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize active navigation
   new ActiveNav();
 
-  // Add fade-in animation to sections on scroll
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -100px 0px",
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  }, observerOptions);
-
-  // Observe all sections
-  document.querySelectorAll(".section").forEach((section) => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(20px)";
-    section.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-    observer.observe(section);
-  });
+  // Initialize scroll animations with parallax
+  initializeScrollAnimations();
 
   // Console easter egg
   console.log(`
@@ -447,7 +450,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize QR Code
   initializeQRCode();
+
+  // Initialize FAQ
   initializeFAQ();
+
+  // Initialize scroll animations with parallax
   initializeScrollAnimations();
 });
 
@@ -476,31 +483,92 @@ function initializeFAQ() {
 }
 
 // ============================================
-// SCROLL ANIMATIONS
+// SCROLL ANIMATIONS WITH PARALLAX
 // ============================================
 
 function initializeScrollAnimations() {
+  // Enhanced scroll reveal animation with better threshold
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: "0px 0px -100px 0px",
+    rootMargin: "0px 0px -80px 0px",
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("animate-in");
-        // Optional: stop observing after animation
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // Observe all animated elements
+  // Observe sections for fade in
+  const sections = document.querySelectorAll(".section");
+  sections.forEach((section) => {
+    section.classList.add("animate-on-scroll");
+    observer.observe(section);
+  });
+
+  // Observe cards and elements with staggered animation
   const animatedElements = document.querySelectorAll(
-    ".benefit-card, .impact-point, .stat-card, .faq-item, .cafe-card, .feature-card, .step-card"
+    ".benefit-card, .impact-point, .stat-card, .faq-item, .cafe-card, .feature-card, .step-card, .roadmap-card"
   );
 
-  animatedElements.forEach((el) => observer.observe(el));
+  animatedElements.forEach((el, index) => {
+    el.classList.add("animate-on-scroll");
+    el.style.setProperty("--animation-order", index % 3);
+    observer.observe(el);
+  });
+
+  // Parallax effect for hero and sections
+  let ticking = false;
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        parallaxScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+}
+
+function parallaxScroll() {
+  const scrolled = window.pageYOffset;
+
+  // Hero parallax
+  const hero = document.querySelector(".hero");
+  if (hero) {
+    const heroContent = hero.querySelector(".hero__content");
+    const heroMockup = hero.querySelector(".hero__mockup");
+
+    if (heroContent) {
+      heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+      heroContent.style.opacity = 1 - scrolled / 600;
+    }
+
+    if (heroMockup) {
+      heroMockup.style.transform = `translateY(${scrolled * 0.15}px)`;
+    }
+  }
+
+  // Section backgrounds parallax
+  const sections = document.querySelectorAll(".section");
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const offsetTop = rect.top + window.pageYOffset;
+    const offsetHeight = section.offsetHeight;
+
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const parallax = (scrolled - offsetTop) * 0.1;
+      const sectionBg = section.querySelector(".section-header");
+
+      if (sectionBg) {
+        sectionBg.style.transform = `translateY(${parallax}px)`;
+      }
+    }
+  });
 }
 
 // ============================================

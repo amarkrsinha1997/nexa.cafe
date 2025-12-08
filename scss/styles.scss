@@ -234,6 +234,14 @@ a {
       background: $color-card-bg;
       padding: $space-lg;
       border-bottom: $border-width-thin solid $color-border;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      animation: slideDown 0.3s ease-out;
+      
+      .nav__item {
+        opacity: 0;
+        width: 100%;
+        text-align: center;
+      }
     }
   }
   
@@ -849,6 +857,177 @@ a {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// ============================================
+// SCROLL ANIMATIONS
+// ============================================
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    
+    &[style*="--animation-order: 0"] {
+      transition-delay: 0s;
+    }
+    
+    &[style*="--animation-order: 1"] {
+      transition-delay: 0.15s;
+    }
+    
+    &[style*="--animation-order: 2"] {
+      transition-delay: 0.3s;
+    }
+  }
+}
+
+// Section-specific animations
+.section.animate-on-scroll {
+  &.animate-in {
+    .section-header {
+      animation: fadeInDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
+    }
+  }
+}
+
+// Card-specific refined animations
+.feature-card.animate-on-scroll,
+.step-card.animate-on-scroll {
+  transform: translateY(40px) scale(0.95);
+  
+  &.animate-in {
+    animation: cardSlideUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  }
+}
+
+.cafe-card.animate-on-scroll {
+  transform: translateY(30px) rotateX(10deg);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  
+  &.animate-in {
+    animation: card3DFlip 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  }
+}
+
+.roadmap-card.animate-on-scroll {
+  transform: translateX(-50px) scale(0.9);
+  opacity: 0;
+  
+  &.animate-in {
+    animation: slideInScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  }
+}
+
+.faq-item.animate-on-scroll {
+  transform: translateX(30px);
+  opacity: 0;
+  
+  &.animate-in {
+    animation: slideInFromRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+  }
+}
+
+@keyframes cardSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes card3DFlip {
+  from {
+    opacity: 0;
+    transform: translateY(30px) rotateX(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Smooth transitions for parallax
+.hero__content,
+.hero__mockup,
+.section-header {
+  transition: transform 0.1s ease-out;
+  will-change: transform;
 }
 
 // ============================================
