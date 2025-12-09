@@ -4,6 +4,8 @@
 
 A modern, static website showcasing cafes and restaurants that accept [Nexa](https://nexa.org) cryptocurrency. Built with vanilla HTML, SCSS, and JavaScript with multi-language support.
 
+> **📌 NOTE:** Nexa's official repository is hosted on GitLab at https://gitlab.com/nexa
+
 ![nexa.cafe](https://img.shields.io/badge/nexa-cafe-FFE144?style=for-the-badge)
 ![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-UNLICENSED-red?style=for-the-badge)

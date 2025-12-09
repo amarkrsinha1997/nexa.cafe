@@ -1733,6 +1733,40 @@ a {
 }
 
 // ============================================
+// NEXA LOGO & POWERED BY
+// ============================================
+
+.footer-powered {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  
+  .nexa-token-logo {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 0 8px rgba(255, 225, 68, 0.3));
+    transition: all 0.3s ease;
+    
+    &:hover {
+      filter: drop-shadow(0 0 12px rgba(255, 225, 68, 0.5));
+      transform: scale(1.05);
+    }
+  }
+  
+  .powered-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, #C58A3A 0%, #FFE144 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.5px;
+  }
+}
+
+// ============================================
 // UTILITY CLASSES
 // ============================================
 
