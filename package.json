@@ -8,7 +8,10 @@
     "sass:build": "sass scss/styles.scss css/styles.css --style=compressed --no-source-map",
     "serve": "npx serve .",
     "dev": "npm-run-all --parallel sass serve",
-    "build": "npm run sass:build",
+    "build": "npm run sass:build && npm run build:js",
+    "build:js": "npm run build:js:en && npm run build:js:hi",
+    "build:js:en": "esbuild js/main.js --bundle --outfile=dist/main.en.js --minify --define:LANGUAGE='\"en\"'",
+    "build:js:hi": "esbuild js/main.js --bundle --outfile=dist/main.hi.js --minify --define:LANGUAGE='\"hi\"'",
     "lint:css": "stylelint 'scss/**/*.scss'",
     "sitemap": "./scripts/generate-sitemap.sh",
     "robots": "./scripts/generate-robots.sh",
@@ -29,9 +32,10 @@
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
+    "esbuild": "^0.19.12",
+    "npm-run-all": "^4.1.5",
     "sass": "^1.69.5",
-    "serve": "^14.2.1",
-    "npm-run-all": "^4.1.5"
+    "serve": "^14.2.1"
   },
   "browserslist": [
     "> 1%",
