@@ -6,11 +6,11 @@ A modern, static website showcasing cafes and restaurants that accept [Nexa](htt
 
 > **📌 NOTE:** Nexa's official repository is hosted on GitLab at https://gitlab.com/nexa
 
-> **⚠️ IMPORTANT:** The cafes currently displayed on this site are example listings for demonstration purposes only as we build out the platform. These are invented cafes, not actual businesses.
-
 ![nexa.cafe](https://img.shields.io/badge/nexa-cafe-FFE144?style=for-the-badge)
 ![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-UNLICENSED-red?style=for-the-badge)
+
+> **⚠️ IMPORTANT NOTE:** The cafe listings currently shown on the site are example/demonstration data created while we build this platform. These are not real cafes accepting Nexa at this time. Real cafe listings will be added as the platform launches.
 
 ---
 
